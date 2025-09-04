@@ -1,0 +1,241 @@
+[gd_scene load_steps=14 format=3 uid="uid://dekklmsi4ba5l"]
+
+[ext_resource type="Script" uid="uid://ee7c6ud01t5r" path="res://scripts/inventory/inventory_ui.gd" id="1_tahbm"]
+[ext_resource type="Texture2D" uid="uid://b2bap7gg1wdfl" path="res://assets/ui/inventory/inventory_ui.png" id="2_2lmnb"]
+[ext_resource type="Texture2D" uid="uid://dom5plnbgubao" path="res://assets/ui/inventory/inventory_ui_frame.png" id="3_2lmnb"]
+[ext_resource type="Texture2D" uid="uid://bq0ema4q3yl33" path="res://assets/ui/inventory/inventory_ui_slot.png" id="3_mdwe3"]
+[ext_resource type="Texture2D" uid="uid://duvs6hsikj0wn" path="res://assets/items/gold_coin_item.png" id="4_1dxi5"]
+[ext_resource type="PackedScene" uid="uid://b8pniy0e7h5dq" path="res://scenes/inventory_ui_slot.tscn" id="4_eicjl"]
+[ext_resource type="Texture2D" uid="uid://cdaqqbx01hljs" path="res://assets/ui/inventory/inventory_ui_note.png" id="4_iradw"]
+[ext_resource type="Texture2D" uid="uid://cf3ghkm34mio6" path="res://assets/ui/inventory/inventory_ui_header.png" id="5_eicjl"]
+[ext_resource type="LabelSettings" uid="uid://df01m0l6nxjx1" path="res://ressources/text_settings.tres" id="9_1dxi5"]
+[ext_resource type="FontFile" uid="uid://0ppg3an02i8y" path="res://assets/fonts/Retro Gaming.ttf" id="9_dqfnd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqfnd"]
+font = ExtResource("9_dqfnd")
+font_size = 22
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iradw"]
+texture = ExtResource("3_mdwe3")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ngbl7"]
+font = ExtResource("9_dqfnd")
+font_size = 22
+font_color = Color(0.176419, 0.176419, 0.176419, 1)
+
+[node name="InventoryUI" type="Control"]
+z_index = 100
+custom_minimum_size = Vector2(224, 160)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tahbm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.705882)
+
+[node name="Inventory" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -336.0
+offset_top = -310.5
+offset_right = -112.0
+offset_bottom = -103.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="Sprite" type="TextureRect" parent="Inventory"]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 207.0
+texture = ExtResource("2_2lmnb")
+
+[node name="MoneySlot" type="NinePatchRect" parent="Inventory"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 57.0
+offset_right = 107.0
+offset_bottom = 74.0
+texture = ExtResource("3_2lmnb")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 3
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/MoneySlot"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+texture = ExtResource("4_1dxi5")
+
+[node name="Money" type="Label" parent="Inventory/MoneySlot"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = -6.33333
+offset_right = 237.0
+offset_bottom = 29.6667
+grow_vertical = 2
+scale = Vector2(0.33, 0.33)
+text = "2 243 000"
+label_settings = SubResource("LabelSettings_dqfnd")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ItemSlots" type="GridContainer" parent="Inventory"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 75.0
+offset_right = 105.0
+offset_bottom = 167.0
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+columns = 3
+
+[node name="Slot1" parent="Inventory/ItemSlots" instance=ExtResource("4_eicjl")]
+layout_mode = 2
+
+[node name="Slot2" parent="Inventory/ItemSlots" instance=ExtResource("4_eicjl")]
+layout_mode = 2
+
+[node name="Slot3" parent="Inventory/ItemSlots" instance=ExtResource("4_eicjl")]
+layout_mode = 2
+
+[node name="Slot4" parent="Inventory/ItemSlots" instance=ExtResource("4_eicjl")]
+layout_mode = 2
+
+[node name="Slot5" parent="Inventory/ItemSlots" instance=ExtResource("4_eicjl")]
+layout_mode = 2
+
+[node name="Slot6" parent="Inventory/ItemSlots" instance=ExtResource("4_eicjl")]
+layout_mode = 2
+
+[node name="Slot7" parent="Inventory/ItemSlots" instance=ExtResource("4_eicjl")]
+layout_mode = 2
+
+[node name="Slot8" parent="Inventory/ItemSlots" instance=ExtResource("4_eicjl")]
+layout_mode = 2
+
+[node name="Slot9" parent="Inventory/ItemSlots" instance=ExtResource("4_eicjl")]
+layout_mode = 2
+
+[node name="ItemDescription" type="Control" parent="Inventory"]
+anchors_preset = 0
+offset_left = 118.0
+offset_top = 62.0
+offset_right = 211.0
+offset_bottom = 124.0
+
+[node name="ItemPreview" type="Panel" parent="Inventory/ItemDescription"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+offset_left = 4.0
+offset_top = 17.1667
+offset_right = 34.0
+offset_bottom = 47.1667
+theme_override_styles/panel = SubResource("StyleBoxTexture_iradw")
+
+[node name="ItemSprite" type="TextureRect" parent="Inventory/ItemDescription/ItemPreview"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NameTextArea" type="NinePatchRect" parent="Inventory/ItemDescription"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 0.166667
+offset_right = 95.0
+offset_bottom = 14.1667
+texture = ExtResource("5_eicjl")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 3
+
+[node name="ItemName" type="Label" parent="Inventory/ItemDescription/NameTextArea"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 256.0
+offset_bottom = 37.0
+scale = Vector2(0.33, 0.33)
+text = "Potion of healing"
+label_settings = SubResource("LabelSettings_ngbl7")
+vertical_alignment = 1
+
+[node name="DescriptionTextArea" type="NinePatchRect" parent="Inventory/ItemDescription"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 17.0
+offset_right = 95.0
+offset_bottom = 47.0
+texture = ExtResource("4_iradw")
+patch_margin_left = 2
+patch_margin_top = 1
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="ItemDesc" type="Label" parent="Inventory/ItemDescription/DescriptionTextArea"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 172.0
+offset_bottom = 86.0
+scale = Vector2(0.33, 0.33)
+text = "It restores a small amount of point to the player"
+label_settings = ExtResource("9_1dxi5")
+autowrap_mode = 3
+
+[node name="EquipementSlots" type="Control" parent="Inventory"]
+anchors_preset = 0
+offset_left = 116.0
+offset_top = 131.167
+offset_right = 212.0
+offset_bottom = 170.167
+
+[node name="EquipementSlot" type="Panel" parent="Inventory/EquipementSlots"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 34.0
+offset_bottom = 34.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iradw")
+
+[node name="WeaponSlot" type="Panel" parent="Inventory/EquipementSlots"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+offset_left = 62.0
+offset_top = 4.0
+offset_right = 92.0
+offset_bottom = 34.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iradw")

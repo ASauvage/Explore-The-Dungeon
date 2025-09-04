@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://o3msqqqmu38o"]
+
+[ext_resource type="Script" uid="uid://baptsx0wjcqbn" path="res://scripts/ressources/item.gd" id="1_kiosw"]
+[ext_resource type="Texture2D" uid="uid://d34pjll76g4ip" path="res://assets/items/log.png" id="2_x46ob"]
+
+[resource]
+script = ExtResource("1_kiosw")
+name = "Log"
+type = "Material"
+rarity = 0
+texture = ExtResource("2_x46ob")
+description = "A solid log, very useful for recipes."
+stack_size = 16
+effect = ""
+metadata/_custom_type_script = "uid://baptsx0wjcqbn"
