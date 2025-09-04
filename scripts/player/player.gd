@@ -17,6 +17,7 @@ var is_pushing: bool = false
 
 
 func _ready() -> void:
+	print(inventory)
 	animation_tree.active = true
 	inventory_ui.visible = false
 

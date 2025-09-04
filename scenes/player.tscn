@@ -1142,7 +1142,6 @@ height = 20.0
 process_mode = 3
 collision_mask = 6
 script = ExtResource("1_oprun")
-inventory = ExtResource("2_a38lo")
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -1194,3 +1193,4 @@ layer = 100
 visible = false
 
 [node name="InventoryUI" parent="InventoryCanva" instance=ExtResource("22_a38lo")]
+inventory = ExtResource("2_a38lo")

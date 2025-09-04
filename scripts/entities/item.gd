@@ -12,5 +12,5 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.inventory.insert(item)
-		queue_free()
+		if body.inventory.insert(item):
+			queue_free()

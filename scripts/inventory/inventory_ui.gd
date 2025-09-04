@@ -1,8 +1,9 @@
 extends Control
 
 
-@onready var inventory: Inventory = preload("res://ressources/player_inventory.tres")
 @onready var item_slots: Array[Node] = $Inventory/ItemSlots.get_children()
+
+@export var inventory: Inventory
 
 
 func _ready() -> void:

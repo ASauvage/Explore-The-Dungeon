@@ -7,7 +7,7 @@ extends Resource
 signal on_inventory_update
 
 
-func insert(item: Item) -> void:
+func insert(item: Item) -> bool:
 	var item_slots = slots.filter(func(slot): return slot.item == item and slot.amount < item.stack_size)
 	
 	if !item_slots.is_empty():
@@ -17,5 +17,8 @@ func insert(item: Item) -> void:
 		if !emptyslots.is_empty():
 			emptyslots[0].item = item
 			emptyslots[0].amount = 1
+		else:
+			return false
 			
 	on_inventory_update.emit()
+	return true
