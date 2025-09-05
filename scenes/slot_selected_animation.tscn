@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://ca7x4pc0s6glq"]
+
+[ext_resource type="Texture2D" uid="uid://dsu13h1wenw06" path="res://assets/ui/inventory/selected_slot.png" id="1_d7jin"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkrdq"]
+atlas = ExtResource("1_d7jin")
+region = Rect2(0, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xymjf"]
+atlas = ExtResource("1_d7jin")
+region = Rect2(30, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inebf"]
+atlas = ExtResource("1_d7jin")
+region = Rect2(60, 0, 30, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyjw3"]
+atlas = ExtResource("1_d7jin")
+region = Rect2(90, 0, 30, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_218cn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkrdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xymjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inebf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyjw3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="SlotSelectedAnimation" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_218cn")
+frame_progress = 0.728296

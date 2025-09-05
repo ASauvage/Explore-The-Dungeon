@@ -16,7 +16,6 @@ func _ready() -> void:
 	inventory.on_money_update.connect(update_money)
 	inventory.on_inventory_update.connect(update_slots)
 	update_money()
-	update_item_desc()
 	update_slots()
 
 
@@ -34,7 +33,9 @@ func update_money() -> void:
 	money.text = result
 
 
-func update_item_desc() -> void:
+func on_slot_interaction(index: int, button: int) -> void:
+	selected_slot = inventory.slots[index]
+	
 	if selected_slot.item:
 		item_desc_sprite.texture = selected_slot.item.texture
 		item_desc_name.text = selected_slot.item.name
@@ -47,4 +48,5 @@ func update_item_desc() -> void:
 
 func update_slots() -> void:
 	for index in range(min(inventory.slots.size(), item_slots.size())):
+		item_slots[index].slot_clicked.connect(on_slot_interaction)
 		item_slots[index].update(inventory.slots[index])
