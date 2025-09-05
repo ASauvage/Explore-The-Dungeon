@@ -1,10 +1,17 @@
-class_name Inventory
 extends Resource
+class_name Inventory
 
 
+@export var money: int = 0
 @export var slots: Array[InventorySlot]
 
+signal on_money_update
 signal on_inventory_update
+
+
+func set_money(amount: int) -> void:
+	money += amount
+	on_money_update.emit()
 
 
 func insert(item: Item) -> bool:

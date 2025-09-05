@@ -188,6 +188,7 @@ offset_top = 1.0
 offset_right = 256.0
 offset_bottom = 37.0
 scale = Vector2(0.33, 0.33)
+text = "Potion of healing"
 label_settings = SubResource("LabelSettings_ngbl7")
 vertical_alignment = 1
 
@@ -210,6 +211,7 @@ offset_top = 1.0
 offset_right = 172.0
 offset_bottom = 86.0
 scale = Vector2(0.33, 0.33)
+text = "It restores a small amount of point to the player"
 label_settings = ExtResource("9_1dxi5")
 autowrap_mode = 3
 

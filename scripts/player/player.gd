@@ -1,5 +1,5 @@
-class_name Player
 extends CharacterBody2D
+class_name Player
 
 
 @onready var animation_tree: StateMachine = $Graphics/AnimationTree
@@ -17,7 +17,6 @@ var is_pushing: bool = false
 
 
 func _ready() -> void:
-	print(inventory)
 	animation_tree.active = true
 	inventory_ui.visible = false
 
@@ -29,6 +28,9 @@ func _process(_delta: float) -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if get_tree().paused:
+		return
+	
 	# movement inputs
 	direction = Input.get_vector("left", "right", "up", "down").normalized()
 	if direction and !is_attacking:
@@ -45,11 +47,8 @@ func _input(event: InputEvent) -> void:
 		get_tree().paused = !get_tree().paused
 
 
-func update_animation_parameters(): 
+func update_animation_parameters() -> void:
 	var current_state = state_machine.get_current_node()
-	
-	if current_state == "End":
-		return
 	
 	animation_tree.is_hit = false
 	animation_tree.is_walking = velocity != Vector2.ZERO

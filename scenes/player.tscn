@@ -1142,6 +1142,7 @@ height = 20.0
 process_mode = 3
 collision_mask = 6
 script = ExtResource("1_oprun")
+inventory = ExtResource("2_a38lo")
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

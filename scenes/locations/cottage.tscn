@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=4 uid="uid://c2218ib56qf33"]
+[gd_scene load_steps=5 format=4 uid="uid://c2218ib56qf33"]
 
 [ext_resource type="PackedScene" uid="uid://es8e6gim8btw" path="res://scenes/player.tscn" id="1_l7fhm"]
-[ext_resource type="Resource" uid="uid://buliw4vblasuo" path="res://ressources/player_inventory.tres" id="2_0sk5j"]
 [ext_resource type="TileSet" uid="uid://bprbos2s7u2l" path="res://assets/tiles/overworld.tres" id="2_lyotn"]
 [ext_resource type="PackedScene" uid="uid://khno0oechrqo" path="res://scenes/item.tscn" id="3_ybkg1"]
 [ext_resource type="Resource" uid="uid://o3msqqqmu38o" path="res://ressources/items/materials/log.tres" id="4_0sk5j"]
@@ -11,7 +10,6 @@ y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_l7fhm")]
 position = Vector2(-101, 18)
-inventory = ExtResource("2_0sk5j")
 
 [node name="TileMap" type="Node2D" parent="."]
 y_sort_enabled = true
