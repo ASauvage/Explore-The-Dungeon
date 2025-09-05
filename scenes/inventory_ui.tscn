@@ -7,20 +7,20 @@
 [ext_resource type="Texture2D" uid="uid://duvs6hsikj0wn" path="res://assets/items/gold_coin_item.png" id="4_1dxi5"]
 [ext_resource type="PackedScene" uid="uid://b8pniy0e7h5dq" path="res://scenes/inventory_ui_slot.tscn" id="4_eicjl"]
 [ext_resource type="Texture2D" uid="uid://cdaqqbx01hljs" path="res://assets/ui/inventory/inventory_ui_note.png" id="4_iradw"]
+[ext_resource type="FontFile" uid="uid://dd3fhu56yemhy" path="res://assets/fonts/quaver.ttf" id="5_dqfnd"]
 [ext_resource type="Texture2D" uid="uid://cf3ghkm34mio6" path="res://assets/ui/inventory/inventory_ui_header.png" id="5_eicjl"]
 [ext_resource type="LabelSettings" uid="uid://df01m0l6nxjx1" path="res://ressources/text_settings.tres" id="9_1dxi5"]
-[ext_resource type="FontFile" uid="uid://0ppg3an02i8y" path="res://assets/fonts/Retro Gaming.ttf" id="9_dqfnd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dqfnd"]
-font = ExtResource("9_dqfnd")
-font_size = 22
+font = ExtResource("5_dqfnd")
+font_size = 24
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iradw"]
 texture = ExtResource("3_mdwe3")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ngbl7"]
-font = ExtResource("9_dqfnd")
-font_size = 22
+font = ExtResource("5_dqfnd")
+font_size = 24
 font_color = Color(0.176419, 0.176419, 0.176419, 1)
 
 [node name="InventoryUI" type="Control"]

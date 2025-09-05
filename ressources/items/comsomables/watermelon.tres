@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemConsomable" load_steps=3 format=3 uid="uid://dp0xe7my5etiy"]
+
+[ext_resource type="Script" uid="uid://b0l8gdc40xg1f" path="res://scripts/ressources/item/item_consomable.gd" id="1_36ts0"]
+[ext_resource type="Texture2D" uid="uid://ckgp6ur0qaay2" path="res://assets/items/watermelon.png" id="2_nk2hq"]
+
+[resource]
+script = ExtResource("1_36ts0")
+effect = "+1 health"
+name = "Watermelon"
+texture = ExtResource("2_nk2hq")
+rarity = 1
+description = "A juicy slice of watermelon."
+stack_size = 16
+price = 10
+metadata/_custom_type_script = "uid://b0l8gdc40xg1f"

@@ -7,7 +7,7 @@ class_name Player
 @onready var inventory_ui: CanvasLayer = $InventoryCanva
 
 @export var hitpoint: int = 5
-@export var speed = 75.0
+@export var speed: float = 75.0
 @export var inventory: Inventory
 
 

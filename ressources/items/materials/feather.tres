@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemMaterial" load_steps=3 format=3 uid="uid://degoxjtwpow7g"]
+
+[ext_resource type="Script" uid="uid://b7usiqht4ll0h" path="res://scripts/ressources/item/item_material.gd" id="1_b7hmh"]
+[ext_resource type="Texture2D" uid="uid://c6p80v7r1cy5c" path="res://assets/items/feather.png" id="2_ih04k"]
+
+[resource]
+script = ExtResource("1_b7hmh")
+name = "Feather"
+texture = ExtResource("2_ih04k")
+rarity = 0
+description = "A feather that comme from a bird (maybe ?)."
+stack_size = 16
+price = 15
+metadata/_custom_type_script = "uid://b7usiqht4ll0h"

@@ -1,15 +1,14 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b6x2kl1n65ta1"]
+[gd_resource type="Resource" script_class="ItemValuable" load_steps=3 format=3 uid="uid://cb1l5n12dnsef"]
 
-[ext_resource type="Script" uid="uid://baptsx0wjcqbn" path="res://scripts/ressources/item.gd" id="1_bhh0o"]
-[ext_resource type="Texture2D" uid="uid://duvs6hsikj0wn" path="res://assets/items/gold_coin_item.png" id="2_vxxus"]
+[ext_resource type="Script" uid="uid://dboaldjcuokkw" path="res://scripts/ressources/item/item_valuable.gd" id="1_ix2ia"]
+[ext_resource type="Texture2D" uid="uid://duvs6hsikj0wn" path="res://assets/items/gold_coin_item.png" id="2_bhh0o"]
 
 [resource]
-script = ExtResource("1_bhh0o")
+script = ExtResource("1_ix2ia")
 name = "Gold Coin"
-type = "Valuable"
-rarity = 1
-texture = ExtResource("2_vxxus")
-description = ""
-stack_size = 0
-effect = ""
-metadata/_custom_type_script = "uid://baptsx0wjcqbn"
+texture = ExtResource("2_bhh0o")
+rarity = 2
+description = "A shiny gold coin, this looks valuable."
+stack_size = 16
+price = 1000
+metadata/_custom_type_script = "uid://dboaldjcuokkw"

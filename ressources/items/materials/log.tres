@@ -1,15 +1,14 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://o3msqqqmu38o"]
+[gd_resource type="Resource" script_class="ItemMaterial" load_steps=3 format=3 uid="uid://mp5vm6tcu6vp"]
 
-[ext_resource type="Script" uid="uid://baptsx0wjcqbn" path="res://scripts/ressources/item.gd" id="1_kiosw"]
+[ext_resource type="Script" uid="uid://b7usiqht4ll0h" path="res://scripts/ressources/item/item_material.gd" id="1_ogwk3"]
 [ext_resource type="Texture2D" uid="uid://d34pjll76g4ip" path="res://assets/items/log.png" id="2_x46ob"]
 
 [resource]
-script = ExtResource("1_kiosw")
+script = ExtResource("1_ogwk3")
 name = "Log"
-type = "Material"
-rarity = 0
 texture = ExtResource("2_x46ob")
-description = "A solid log, very useful for recipes."
+rarity = 0
+description = "A commun log, might be useful for crafting."
 stack_size = 16
-effect = ""
-metadata/_custom_type_script = "uid://baptsx0wjcqbn"
+price = 10
+metadata/_custom_type_script = "uid://b7usiqht4ll0h"
