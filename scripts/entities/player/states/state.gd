@@ -4,10 +4,6 @@ class_name State extends Node
 static var player: Player
 
 
-func _ready() -> void:
-	pass
-
-
 func enter() -> void:
 	pass
 

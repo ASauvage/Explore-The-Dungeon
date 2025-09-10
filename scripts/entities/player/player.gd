@@ -11,6 +11,7 @@ var direction: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
+	PlayerManager.player = self
 	state_machine.initialize(self)
 
 

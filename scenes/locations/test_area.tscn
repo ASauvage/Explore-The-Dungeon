@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://2sq7gm1tdgyp"]
+[gd_scene load_steps=7 format=4 uid="uid://2sq7gm1tdgyp"]
 
 [ext_resource type="TileSet" uid="uid://bskcy4l7gjibh" path="res://assets/tiles/overworld_tileset.tres" id="1_lh55h"]
 [ext_resource type="PackedScene" uid="uid://bil4py4ki0dbq" path="res://scenes/entities/player/player.tscn" id="2_21bn4"]
 [ext_resource type="TileSet" uid="uid://dgrn65nfqjlta" path="res://assets/tiles/overworld_decors_tileset.tres" id="3_ehiq2"]
 [ext_resource type="PackedScene" uid="uid://ciqocvonra0vs" path="res://scenes/props/prop_plant.tscn" id="3_kttxi"]
 [ext_resource type="Script" uid="uid://cgtapdod71o68" path="res://scripts/level_tilemap.gd" id="3_lwa8p"]
+[ext_resource type="PackedScene" uid="uid://bjeumvp813aen" path="res://scenes/entities/enemies/slime.tscn" id="6_i3h13"]
 
 [node name="TestArea" type="Node2D"]
 y_sort_enabled = true
@@ -64,3 +65,6 @@ z_index = -1
 
 [node name="PropPot" parent="." instance=ExtResource("3_kttxi")]
 position = Vector2(33, 83)
+
+[node name="Slime" parent="." instance=ExtResource("6_i3h13")]
+position = Vector2(-28, -63)
