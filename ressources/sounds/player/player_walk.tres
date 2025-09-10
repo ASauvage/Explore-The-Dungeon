@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://bc55pnu3ejmwk"]
+
+[ext_resource type="AudioStream" uid="uid://bw7oifnf5e0tn" path="res://assets/sounds/entities/player/player_walk/player_walk_stone_1.wav" id="1_4vf0a"]
+[ext_resource type="AudioStream" uid="uid://3k7v4t4qubbw" path="res://assets/sounds/entities/player/player_walk/player_walk_stone_2.wav" id="2_5ibof"]
+[ext_resource type="AudioStream" uid="uid://d3vt1aq885r4l" path="res://assets/sounds/entities/player/player_walk/player_walk_stone_3.wav" id="3_r4ea8"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_4vf0a")
+stream_1/stream = ExtResource("2_5ibof")
+stream_2/stream = ExtResource("3_r4ea8")

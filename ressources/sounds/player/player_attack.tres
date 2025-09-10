@@ -1,0 +1,11 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://b8mamjqw4y3vm"]
+
+[ext_resource type="AudioStream" uid="uid://3uu5u8mpkrc1" path="res://assets/sounds/entities/player/player_attack/player_attack_1.wav" id="1_7l6c2"]
+[ext_resource type="AudioStream" uid="uid://3pm1emfu7jrr" path="res://assets/sounds/entities/player/player_attack/player_attack_2.wav" id="2_io3w8"]
+[ext_resource type="AudioStream" uid="uid://cnc8dgm0rfeaq" path="res://assets/sounds/entities/player/player_attack/player_attack_3.wav" id="3_qrjr1"]
+
+[resource]
+streams_count = 3
+stream_0/stream = ExtResource("1_7l6c2")
+stream_1/stream = ExtResource("2_io3w8")
+stream_2/stream = ExtResource("3_qrjr1")

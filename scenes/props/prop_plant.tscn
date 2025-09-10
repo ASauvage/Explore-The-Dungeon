@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://ciqocvonra0vs"]
+
+[ext_resource type="Script" uid="uid://d0d1psy8ot45l" path="res://scripts/props/props_plant.gd" id="1_gry5h"]
+[ext_resource type="Texture2D" uid="uid://d3be4yc46odsw" path="res://assets/tiles/overworld_decors_tileset.png" id="2_nktje"]
+[ext_resource type="PackedScene" uid="uid://d1kgpnkic5qdx" path="res://scenes/entities/hit_box.tscn" id="3_5ps07"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b60bg"]
+atlas = ExtResource("2_nktje")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gry5h"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wd63t"]
+radius = 4.0
+
+[node name="PropPot" type="Node2D"]
+script = ExtResource("1_gry5h")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_b60bg")
+
+[node name="HitBox" parent="." instance=ExtResource("3_5ps07")]
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_gry5h")
+debug_color = Color(0.521569, 0.576471, 0, 0.419608)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="Collision" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_wd63t")
+
+[connection signal="damaged" from="HitBox" to="." method="_on_hit_box_damaged"]
