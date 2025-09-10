@@ -1,31 +1,48 @@
-class_name PlayerStateMachine extends AnimationTree
+class_name PlayerStateMachine extends Node
 
 
-const DIRECTIONAL_STATE: Array[String] = ["Idle", "Walk", "Attack"]
-const STATIC_STATE: Array[String] = ["Attack"]
-
-@onready var player: Player = get_owner()
-
-var state: String
-var is_walking: bool = false
-var is_attacking: bool = false
+var states: Array[State]
+var prev_state: State
+var current_state: State
 
 
 func _ready() -> void:
-	active = true
-	set("parameters/Idle/blend_position", player.direction)
+	process_mode = Node.PROCESS_MODE_DISABLED
 
 
-func _process(_delta: float) -> void:
-	state = get("parameters/playback").get_current_node()
+func _process(delta: float) -> void:
+	change_state(current_state.process(delta))
+
+
+func _physics_process(delta: float) -> void:
+	change_state(current_state.physics(delta))
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	change_state(current_state.handle_input(event))
+
+
+func initialize(player: Player) -> void:
+	states = []
 	
-	_define_variables()
+	for c in get_children():
+		if c is State:
+			states.append(c)
 	
-	if player.velocity != Vector2.ZERO:
-		for d_state in DIRECTIONAL_STATE:
-			set("parameters/%s/blend_position" % d_state, player.direction)
+	if not states.is_empty():
+		states[0].player = player
+		change_state(states[0])
+		process_mode = Node.PROCESS_MODE_INHERIT
 
 
-func _define_variables() -> void:
-	is_walking = true if player.velocity else false
-	is_attacking = Input.is_action_just_pressed("attack")
+func change_state(new_state: State) -> void:
+	if new_state == null or new_state == current_state:
+		return
+	
+	if current_state:
+		current_state.exit()
+	
+	prev_state = current_state
+	current_state = new_state
+	
+	current_state.enter()
