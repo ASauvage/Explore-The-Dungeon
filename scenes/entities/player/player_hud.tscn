@@ -1,0 +1,87 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpndk6727w5tj"]
+
+[ext_resource type="Script" uid="uid://dqkejl4ycc2ww" path="res://scripts/entities/player/player_hud.gd" id="1_cj6ur"]
+[ext_resource type="PackedScene" uid="uid://cxvtmiv4aw0lf" path="res://scenes/entities/player/player_hud_heart.tscn" id="2_qjifa"]
+
+[node name="PlayerHUD" type="CanvasLayer"]
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+script = ExtResource("1_cj6ur")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeartContainer" type="HFlowContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 108.0
+offset_bottom = 26.0
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 0
+
+[node name="Heart1" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart2" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart3" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart4" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart5" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart6" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart7" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart8" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart9" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart10" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart11" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart12" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart13" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart14" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart15" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart16" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart17" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart18" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart19" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="Heart20" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2

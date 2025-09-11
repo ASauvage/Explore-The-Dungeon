@@ -5,5 +5,5 @@ func _ready() -> void:
 	pass
 
 
-func _on_hit_box_damaged(damage: int) -> void:
+func _on_hit_box_damaged(_damage: int) -> void:
 	queue_free()

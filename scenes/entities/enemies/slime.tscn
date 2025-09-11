@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://bjeumvp813aen"]
+[gd_scene load_steps=23 format=3 uid="uid://bjeumvp813aen"]
 
 [ext_resource type="Script" uid="uid://ci6e7bl1e6v6i" path="res://scripts/entities/slime/slime.gd" id="1_glkij"]
 [ext_resource type="Texture2D" uid="uid://d1puur13tyqqb" path="res://assets/entities/enemies/slime/idle.png" id="1_iy50v"]
 [ext_resource type="Texture2D" uid="uid://c56lfcmw111as" path="res://assets/entities/enemies/slime/move.png" id="2_glkij"]
 [ext_resource type="Texture2D" uid="uid://coxwdkabh4lrw" path="res://assets/entities/enemies/slime/death.png" id="3_rw4dm"]
 [ext_resource type="Texture2D" uid="uid://7ij8kjsbgt" path="res://assets/entities/enemies/slime/hit.png" id="4_qb1uk"]
+[ext_resource type="AudioStream" uid="uid://me8yuk3p1we" path="res://assets/sounds/entities/slime/slime_death.wav" id="4_uiinm"]
 [ext_resource type="AudioStream" uid="uid://dqyu11poaiwga" path="res://assets/sounds/entities/player/player_hit/player_hit_1.wav" id="5_yj1er"]
 [ext_resource type="Script" uid="uid://bdscf2ay76ajb" path="res://scripts/entities/enemy_state_machine.gd" id="6_qb1uk"]
 [ext_resource type="PackedScene" uid="uid://khu6p8wxo7j5" path="res://scenes/entities/hurt_box.tscn" id="6_yhyqx"]
@@ -12,6 +13,7 @@
 [ext_resource type="Script" uid="uid://ow5svq6cxnpf" path="res://scripts/entities/states/enemy_state_wander.gd" id="8_qesak"]
 [ext_resource type="PackedScene" uid="uid://d1kgpnkic5qdx" path="res://scenes/entities/hit_box.tscn" id="8_svxgx"]
 [ext_resource type="Script" uid="uid://bfhesw3all5pd" path="res://scripts/entities/states/enemy_state_stun.gd" id="11_sqfw5"]
+[ext_resource type="Script" uid="uid://lpj66hgydww8" path="res://scripts/entities/states/enemy_state_destroy.gd" id="13_qhhf1"]
 
 [sub_resource type="Animation" id="Animation_yhyqx"]
 length = 0.001
@@ -116,6 +118,21 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AudioStreamPlayer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.51999,
+"start_offset": 0.0,
+"stream": ExtResource("4_uiinm")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/4/use_blend = true
 
 [sub_resource type="Animation" id="Animation_svxgx"]
 resource_name = "hit"
@@ -165,7 +182,7 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "clips": [{
-"end_offset": 0.976434,
+"end_offset": 0.933323,
 "start_offset": 0.0,
 "stream": ExtResource("5_yj1er")
 }],
@@ -277,6 +294,7 @@ radius = 5.0
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_glkij")
+hitpoint = 3
 
 [node name="Graphics" type="Node2D" parent="."]
 
@@ -326,3 +344,4 @@ script = ExtResource("11_sqfw5")
 next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
+script = ExtResource("13_qhhf1")

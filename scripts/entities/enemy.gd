@@ -15,7 +15,8 @@ var direction: Vector2 = Vector2.ZERO
 var player: Player
 var invulnerable: bool = false
 
-signal on_damage()
+signal on_damage(hurtbox: HurtBox)
+signal on_destroy(hurtbox: HurtBox)
 
 
 func _ready() -> void:
@@ -59,8 +60,11 @@ func animation_direction() -> String:
 			return "west"
 
 
-func _take_damage(damage: int) -> void:
+func _take_damage(hurtbox: HurtBox) -> void:
 	if invulnerable:
 		return
-	hitpoint -= damage
-	on_damage.emit()
+	hitpoint -= hurtbox.damage
+	if hitpoint > 0:
+		on_damage.emit(hurtbox)
+	else:
+		on_destroy.emit(hurtbox)

@@ -10,6 +10,10 @@ class_name StateAttack extends State
 var is_attacking: bool = false
 
 
+func init() -> void:
+	pass
+
+
 func enter() -> void:
 	player.update_animation("attack")
 	animation_player.animation_finished.connect(end_attack)

@@ -1,9 +1,8 @@
 class_name HitBox extends Area2D
 
 
-signal damaged(damage: int)
+signal damaged(hurtbox: HurtBox)
 
 
-func take_damage(damage: int) -> void:
-	print("Ouch")
-	damaged.emit(damage)
+func take_damage(hurtbox: HurtBox) -> void:
+	damaged.emit(hurtbox)

@@ -1,23 +1,19 @@
-class_name EnemyStateStun extends EnemyState
+class_name EnemyStateDestroy extends EnemyState
 
 
-@export var anim_name: String = "hit"
+@export var anim_name: String = "death"
 @export var knockback_speed: float = 200.0
 @export var decelerate_speed: float = 10.0
-@export_category("AI")
-@export var next_state: EnemyState
 
 var _direction: Vector2
 var _damage_position: Vector2
-var _animation_finished: bool = false
 
 
 func init() -> void:
-	enemy.on_damage.connect(_on_enemy_damage)
+	enemy.on_destroy.connect(_on_enemy_destroy)
 
 
 func enter() -> void:
-	_animation_finished = false
 	enemy.invulnerable = true
 	
 	_direction = enemy.global_position.direction_to(_damage_position)
@@ -29,8 +25,6 @@ func enter() -> void:
 
 
 func process(_delta: float) -> EnemyState:
-	if _animation_finished:
-		return next_state
 	enemy.velocity -= enemy.velocity * decelerate_speed * _delta
 	return null
 
@@ -40,14 +34,13 @@ func physics(_delta: float) -> EnemyState:
 
 
 func exit() -> void:
-	enemy.invulnerable = false
-	enemy.animation_player.animation_finished.disconnect(_on_animation_finished)
+	pass
 
 
-func _on_enemy_damage(hurtbox: HurtBox) -> void:
+func _on_enemy_destroy(hurtbox: HurtBox) -> void:
 	_damage_position = hurtbox.global_position
 	state_machine.change_state(self)
 
 
 func _on_animation_finished(_anim_name: StringName) -> void:
-	_animation_finished = true
+	enemy.queue_free()

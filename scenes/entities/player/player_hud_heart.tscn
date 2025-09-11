@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxvtmiv4aw0lf"]
+
+[ext_resource type="Texture2D" uid="uid://csrcexggtrtld" path="res://assets/ui/hud/heart.png" id="1_k850f"]
+[ext_resource type="Script" uid="uid://dphmboiu5dii4" path="res://scripts/entities/player/player_hud_heart.gd" id="1_mxre7"]
+
+[node name="PlayerHUDHeart" type="Control"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_mxre7")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_k850f")
+centered = false
+hframes = 5

@@ -7,6 +7,10 @@ class_name StateWalk extends State
 @onready var attack: State = $"../Attack"
 
 
+func init() -> void:
+	pass
+
+
 func enter() -> void:
 	player.update_animation("walk")
 

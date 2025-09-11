@@ -31,6 +31,11 @@ func initialize(player: Player) -> void:
 	
 	if not states.is_empty():
 		states[0].player = player
+		states[0].state_machine = self
+		
+		for state in states:
+			state.init()
+		
 		change_state(states[0])
 		process_mode = Node.PROCESS_MODE_INHERIT
 
