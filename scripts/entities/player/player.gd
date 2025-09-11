@@ -8,7 +8,7 @@ const DIR_4: Array[Vector2] = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var hit_box: HitBox = $HitBox
 
-@export var max_hitpoint: int = 6
+@export_range(1, 20) var max_hitpoint: int = 6
 
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
@@ -19,7 +19,6 @@ signal on_damage(hurtbox: HurtBox)
 
 
 func _ready() -> void:
-	PlayerHud.visible = true
 	PlayerManager.player = self
 	state_machine.initialize(self)
 	hit_box.damaged.connect(_take_damage)

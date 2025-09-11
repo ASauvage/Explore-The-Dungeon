@@ -5,7 +5,7 @@ var hearts: Array[HUDHeart] = []
 
 
 func _ready() -> void:
-	for child in $Control/HeartContainer.get_children():
+	for child in $Control/MarginContainer/HeartContainer.get_children():
 		if child is HUDHeart:
 			hearts.append(child)
 			child.visible = false

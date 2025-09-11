@@ -16,72 +16,77 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HeartContainer" type="HFlowContainer" parent="Control"]
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = -1
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 108.0
-offset_bottom = 26.0
+offset_right = 113.0
+offset_bottom = 31.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+
+[node name="HeartContainer" type="HFlowContainer" parent="Control/MarginContainer"]
+layout_mode = 2
 theme_override_constants/h_separation = 2
 theme_override_constants/v_separation = 0
 
-[node name="Heart1" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart1" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart2" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart2" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart3" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart3" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart4" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart4" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart5" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart5" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart6" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart6" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart7" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart7" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart8" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart8" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart9" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart9" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart10" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart10" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart11" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart11" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart12" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart12" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart13" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart13" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart14" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart14" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart15" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart15" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart16" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart16" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart17" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart17" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart18" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart18" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart19" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart19" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
 layout_mode = 2
 
-[node name="Heart20" parent="Control/HeartContainer" instance=ExtResource("2_qjifa")]
+[node name="Heart20" parent="Control/MarginContainer/HeartContainer" instance=ExtResource("2_qjifa")]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/MarginContainer"]
 layout_mode = 2

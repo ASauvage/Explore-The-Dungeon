@@ -1,0 +1,143 @@
+[gd_scene load_steps=7 format=3 uid="uid://exwpltnv73wg"]
+
+[ext_resource type="Texture2D" uid="uid://ciaiikigfgiy7" path="res://assets/ui/menus/pause_menu/pause_menu_ui.png" id="1_6tw0m"]
+[ext_resource type="Script" uid="uid://drtx5e5jd1skn" path="res://scripts/ui/pause_menu.gd" id="1_f6eus"]
+[ext_resource type="Texture2D" uid="uid://cafltxdv40i7p" path="res://assets/ui/button.png" id="2_0lmf7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6eus"]
+atlas = ExtResource("2_0lmf7")
+region = Rect2(0, 0, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uki6"]
+atlas = ExtResource("2_0lmf7")
+region = Rect2(128, 0, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bnpd"]
+atlas = ExtResource("2_0lmf7")
+region = Rect2(64, 0, 64, 16)
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_f6eus")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.533333)
+
+[node name="Menu" type="Control" parent="."]
+custom_minimum_size = Vector2(672, 621)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_6tw0m")
+expand_mode = 3
+
+[node name="LeftPage" type="Control" parent="Menu"]
+anchors_preset = 0
+offset_left = 27.0
+offset_top = 165.5
+offset_right = 336.0
+offset_bottom = 582.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/LeftPage"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -52.0
+offset_right = 64.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SaveButton" type="TextureButton" parent="Menu/LeftPage/VBoxContainer"]
+custom_minimum_size = Vector2(192, 48)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_f6eus")
+texture_pressed = SubResource("AtlasTexture_8uki6")
+texture_hover = SubResource("AtlasTexture_0bnpd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Menu/LeftPage/VBoxContainer/SaveButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Save"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoadButton" type="TextureButton" parent="Menu/LeftPage/VBoxContainer"]
+custom_minimum_size = Vector2(192, 48)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_f6eus")
+texture_pressed = SubResource("AtlasTexture_8uki6")
+texture_hover = SubResource("AtlasTexture_0bnpd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Menu/LeftPage/VBoxContainer/LoadButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Load"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="Menu/LeftPage/VBoxContainer"]
+custom_minimum_size = Vector2(192, 48)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_f6eus")
+texture_pressed = SubResource("AtlasTexture_8uki6")
+texture_hover = SubResource("AtlasTexture_0bnpd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Menu/LeftPage/VBoxContainer/QuitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightPage" type="Control" parent="Menu"]
+anchors_preset = 0
+offset_left = 339.0
+offset_top = 165.5
+offset_right = 645.0
+offset_bottom = 582.5
